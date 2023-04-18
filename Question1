@@ -1,0 +1,14 @@
+import math
+
+n = int(input("Enter a value for n: "))
+x = int(input("Enter a value for x: "))
+
+denominators = list(map(lambda i: math.factorial(i), range(x)))
+
+numerators = list(map(lambda i: n**i, range(x)))
+
+fractions = list(map(lambda i: numerators[i]/denominators[i], range(x)))
+
+result = sum(fractions) + 1
+
+print(f"e^{n} = {result}")
