@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+double calculateSum(int n, double sum_value) {
+    if (n == 0) {
+        return 0;
+    }
+    sum_value = calculateSum(n - 1, sum_value);
+    sum_value += pow(-1, n + 1) / n;
+    return sum_value;
+}
+
+int main() {
+    int n;
+    double sum_value = 0;
+    cout << "Enter the value of n: ";
+    cin >> n;
+    sum_value = calculateSum(n, sum_value);
+    cout << "The sum of the equation is: " << sum_value << endl;
+    return 0;
+}
