@@ -1,0 +1,11 @@
+def calculate_sum(n):
+    global sum_value
+    if n == 0:
+        sum_value = 0
+    else:
+        calculate_sum(n - 1)
+        sum_value += ((-1) ** (n + 1)) / n
+
+sum_value = 0
+calculate_sum(5)
+print(f"The sum of the equation is: {sum_value}")
